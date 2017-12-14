@@ -12,5 +12,5 @@ class PocoGirlItem(Item):
     # define the fields for your item here like:
     name = Field()
     url = Field()
-    # imgUrls = Field()
+    imgUrls = Field()
     pass
