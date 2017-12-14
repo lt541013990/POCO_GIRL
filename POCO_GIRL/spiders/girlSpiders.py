@@ -16,5 +16,6 @@ class girlSpiders(Spider):
         item = PocoGirlItem()
         item['name'] = selector.xpath('//h1[@class = "mt10"]/text()').extract_first(default="N/A")
         item['url'] = response.url
-        imgUrls = selector.xpath('.//div[@class="photo_list_mod photo_list_mod_alpha_line"]')
-        print(item['name'])
+        item['imgUrls'] = selector.xpath('//div[@class="photo"]/a/img/@src').extract()
+
+        rightUrl = selector.xpath('//div[@class="poco_page_right"]/a/@herf').extract_first(default="N/A")
